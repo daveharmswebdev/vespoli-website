@@ -102,6 +102,14 @@
   dependencies:
     tslib "^1.9.0"
 
+"@angular/cdk@~7.1.1":
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-7.1.1.tgz#6916b2303af5e0a56a9b64ff4d54642cf191c54f"
+  dependencies:
+    tslib "^1.7.1"
+  optionalDependencies:
+    parse5 "^5.0.0"
+
 "@angular/cli@~7.0.6":
   version "7.0.7"
   resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-7.0.7.tgz#0f4500c5fcf22694c9c40f14d2a5b3dc90fbb4a3"
@@ -167,6 +175,12 @@
   version "7.0.4"
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-7.0.4.tgz#db221f183725ff54c1188aec7acb2948e29f4c50"
 
+"@angular/material@^7.1.1":
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-7.1.1.tgz#147b7565262e04d504c8dab7317632967a3db02a"
+  dependencies:
+    tslib "^1.7.1"
+
 "@angular/platform-browser-dynamic@~7.0.0":
   version "7.0.4"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-7.0.4.tgz#69abb8c784bb71a660a0c824ca4a1a4960811a33"
@@ -184,6 +198,12 @@
   resolved "https://registry.yarnpkg.com/@angular/router/-/router-7.0.4.tgz#ae2c32cc6a29bfe6eb909b9c63257d187075f4ff"
   dependencies:
     tslib "^1.9.0"
+
+"@auth0/angular-jwt@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@auth0/angular-jwt/-/angular-jwt-2.1.0.tgz#5c90ee7d927e70cefa8db7c89a64eb67c05a912d"
+  dependencies:
+    url "^0.11.0"
 
 "@babel/code-frame@^7.0.0":
   version "7.0.0"
@@ -262,6 +282,22 @@
     esutils "^2.0.2"
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
+
+"@ngrx/effects@^6.1.2":
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-6.1.2.tgz#602f3ee9798e00179075ddef030ded88c28b1aa1"
+
+"@ngrx/entity@^6.1.2":
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/@ngrx/entity/-/entity-6.1.2.tgz#4573adad159cf482b1895a1760766745997bd142"
+
+"@ngrx/store-devtools@^6.1.2":
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-6.1.2.tgz#b9cb8d6bcd7ee0d171dde86c9bdd5e6a5bc5563a"
+
+"@ngrx/store@^6.1.2":
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-6.1.2.tgz#20fb5ab4d79571b804a348093aa11a167fe2946f"
 
 "@ngtools/webpack@7.0.7":
   version "7.0.7"
@@ -2586,6 +2622,10 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6:
   version "4.1.15"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.15.tgz#ffb703e1066e8a0eeaa4c8b80ba9253eeefbfb00"
 
+hammerjs@^2.0.8:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/hammerjs/-/hammerjs-2.0.8.tgz#04ef77862cff2bb79d30f7692095930222bf60f1"
+
 handle-thing@^1.2.5:
   version "1.2.5"
   resolved "http://registry.npmjs.org/handle-thing/-/handle-thing-1.2.5.tgz#fd7aad726bf1a5fd16dfc29b2f7a6601d27139c4"
@@ -4385,6 +4425,10 @@ parse5@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-4.0.0.tgz#6d78656e3da8d78b4ec0b906f7c08ef1dfe3f608"
 
+parse5@^5.0.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/parse5/-/parse5-5.1.0.tgz#c59341c9723f414c452975564c7c00a68d58acd2"
+
 parseqs@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/parseqs/-/parseqs-0.0.5.tgz#d5208a3738e46766e291ba2ea173684921a8b89d"
@@ -5883,7 +5927,7 @@ ts-node@~7.0.0:
     source-map-support "^0.5.6"
     yn "^2.0.0"
 
-tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
+tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
 
