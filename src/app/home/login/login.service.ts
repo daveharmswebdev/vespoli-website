@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { tap, map } from 'rxjs/operators';
+import { tap, map, delay, switchMap } from 'rxjs/operators';
+import { Store, select } from '@ngrx/store';
+import { selectToken } from './store/login.selectors';
+import { AppState } from 'src/app/reducers';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +13,7 @@ export class LoginService {
   private baseUrl: 'https://localhost:5001/api';
   private jwtHelper = new JwtHelperService();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private store: Store<AppState>) {}
 
   login(UserName, Password) {
     const url = 'https://localhost:5001/api/auth/login';
@@ -22,6 +25,7 @@ export class LoginService {
     console.log(url);
 
     return this.http.post(url, body).pipe(
+      delay(0),
       map((resp: { token: string }) => {
         const { nameid, unique_name } = this.jwtHelper.decodeToken(resp.token);
 
@@ -35,12 +39,12 @@ export class LoginService {
   }
 
   getRowers() {
-    const headers = new HttpHeaders().set(
-      'Authorization',
-      // tslint:disable-next-line:max-line-length
-      'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIyIiwidW5pcXVlX25hbWUiOiJtYXRoaXMiLCJuYmYiOjE1NDQ5MDg0MTksImV4cCI6MTU0NDk5NDgxOSwiaWF0IjoxNTQ0OTA4NDE5fQ.HBxGAmZVheC0fTuYF0nYsJ75oG47SMcPOtO1TUOOk-YVWzEEwI9klSmLQRCjoAM0LtVS9zRxIAqBXQ2sBa5fgA'
+    return this.store.pipe(
+      select(selectToken),
+      switchMap(token => {
+        const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+        return this.http.get('https://localhost:5001/api/rower', { headers });
+      })
     );
-
-    return this.http.get('https://localhost:5001/api/rower', { headers });
   }
 }

@@ -1,0 +1,5 @@
+<mat-card *ngFor="let rower of rowers$ | async">
+  <mat-card-title>
+    <h4>Rower</h4>: {{rower.userName | titlecase}}
+  </mat-card-title>
+</mat-card>

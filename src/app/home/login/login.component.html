@@ -1,7 +1,7 @@
 <mat-card class="example-card">
   <mat-card-header> <mat-card-title>Login</mat-card-title> </mat-card-header>
   <mat-card-content>
-    <form class="example-form">
+    <form [formGroup]="loginForm" class="example-form">
       <table class="example-full-width" cellspacing="0">
         <tr>
           <td>
@@ -9,9 +9,8 @@
               <input
                 matInput
                 placeholder="Username"
-                [(ngModel)]="username"
+                formControlName="username"
                 name="username"
-                required
               />
             </mat-form-field>
           </td>
@@ -22,19 +21,22 @@
               <input
                 matInput
                 placeholder="Password"
-                [(ngModel)]="password"
+                formControlName="password"
                 type="password"
                 name="password"
-                required
               />
             </mat-form-field>
           </td>
         </tr>
       </table>
     </form>
-    <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+    <mat-spinner [style.display]="(attemptingLogin$ | async) ? 'block' : 'none'"></mat-spinner>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button (click)="login()" color="primary">Login</button>
+    <button
+      mat-raised-button
+      (click)="login()"
+      color="primary"
+      [disabled]="loginForm.invalid">Login</button>
   </mat-card-actions>
 </mat-card>

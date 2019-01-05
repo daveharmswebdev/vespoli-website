@@ -36,7 +36,19 @@ export function loginReducer(
         loggedIn: true
       };
     }
+    case LoginActionTypes.LoginFailure: {
+      return {
+        ...state,
+        attemptingLogin: false
+      };
+
+    }
     default:
       return state;
   }
 }
+
+export const getAttemptingLogin = (state: ILoginState) => state.attemptingLogin;
+export const getToken = (state: ILoginState) => state.token;
+export const getUniqueName = (state: ILoginState) => state.unique_name;
+export const getLoggedIn = (state: ILoginState) => state.loggedIn;

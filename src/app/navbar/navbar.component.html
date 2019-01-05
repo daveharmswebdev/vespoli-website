@@ -3,7 +3,20 @@
     <span>Do You Even Row</span>
     <span class="example-fill-remaining-space"></span>
     <span class="align-center"></span> <span class="example-spacer"></span>
-    <button mat-button>About</button> <button mat-button>Contact</button>
+    <button mat-button>About</button>
+    <button mat-button>Contact</button>
+    <button
+      mat-button
+      *ngIf="uniqueName$ | async"
+      [matMenuTriggerFor]="user">Hello {{(uniqueName$ | async) | titlecase}}</button>
+    <mat-menu #user="matMenu">
+      <button mat-menu-item [routerLink]="['rowers']">
+        <span>Rowers</span>
+      </button>
+      <button mat-menu-item [routerLink]="['workout']">
+        <span>Add Workout</span>
+      </button>
+    </mat-menu>
     <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>more_vert</mat-icon>
     </button>
